@@ -1,42 +1,30 @@
-# sv
+# X-Pose
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+> You uploaded this data yourself. You just didn't know it.
 
-## Creating a project
+X-Pose is a local OSINT intelligence tool that extracts and visualizes publicly available metadata and detectable information from uploaded photos.
 
-If you're seeing this, you've probably already done this step. Congrats!
+## What it does
 
-```sh
-# create a new project
-npx sv create my-app
-```
+- Extracts EXIF metadata via a compiled C binary (GPS, device, timestamps, camera settings)
+- Runs computer vision detection via Python 3 (objects, text, scene classification)
+- Visualizes everything as a structured intelligence dossier — the "second photo"
 
-To recreate this project with the same configuration:
+## Stack
 
-```sh
-# recreate this project
-bun x sv@0.16.1 create --template minimal --types ts --install bun .
-```
+- **Frontend/Backend**: SvelteKit 2 + Svelte 5 + Tailwind 4 + Bun
+- **Metadata extraction**: C + libexif
+- **Detection layer**: Python 3 + YOLO + Tesseract + OpenCV
+- **Optional**: Ollama (local LLM summary)
 
-## Developing
+## Status
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+🔧 Active development — Block 0 (scaffold)
 
-```sh
-npm run dev
+## Legal
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+X-Pose only reads data that is already embedded in files or publicly visible in images. No private data sources, no network scraping.
 
-## Building
+---
 
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+*Home Grown Software Solutions — "It's not a bug, it's a lab environment."*
